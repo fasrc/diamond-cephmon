@@ -73,10 +73,9 @@ class CephMonCollector(diamond.collector.Collector):
             self.log.error('Unable to import module Rados')
             return {}
 
-        perf_values = ['bytes_used', 'bytes_total', 'bytes_avail',
-                       'data_bytes', 'num_pgs', 'op_per_sec',
-                       'read_bytes_sec', 'write_bytes_sec', 'pgs_by_state',
-                       'osdmap']
+        perf_values = ['bytes_used', 'bytes_total', 'bytes_avail', 'data_bytes',
+                       'num_pgs', 'read_op_per_sec', 'read_bytes_sec', 'write_op_per_sec',
+                       'write_bytes_sec', 'pgs_by_state', 'osdmap']
 
         cluster_conf = dict(
             conffile = self.config['ceph_config'],
